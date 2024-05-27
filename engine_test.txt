@@ -1,0 +1,23 @@
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class EngineTest {
+
+    @Test
+    public void testStartStopEngine() throws InterruptedException {
+        // Create a new engine instance
+        Engine engine = new Engine(1000, 4, "gas");
+
+        // Start the engine
+        engine.start();
+        assertTrue(engine.isRunning(), "Engine should be running after start");
+
+        // Sleep for 3 seconds
+        Thread.sleep(3000);
+
+        // Stop the engine
+        engine.stop();
+        assertFalse(engine.isRunning(), "Engine should not be running after stop");
+    }
+}

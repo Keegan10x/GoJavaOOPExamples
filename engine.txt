@@ -1,0 +1,38 @@
+public class Engine {
+    private int capacity;
+    private int cylinders;
+    private String engineType;
+    private boolean isRunning;
+
+    // Constructor
+    public Engine(int capacity, int cylinders, String engineType) {
+        this.capacity = capacity;
+        this.cylinders = cylinders;
+        this.engineType = engineType;
+        this.isRunning = false;
+    }
+
+    // Start method
+    public void start() {
+        if (isRunning) {
+            System.out.println("already running...");
+            return;
+        }
+        isRunning = true;
+        System.out.println("engine has started...");
+    }
+
+    // Stop method
+    public void stop() {
+        if (!isRunning) {
+            System.out.println("already stopped...");
+            return;
+        }
+        isRunning = false;
+        System.out.println("engine has stopped...");
+    }
+
+    public boolean isRunning() {
+        return isRunning;
+    }
+}
